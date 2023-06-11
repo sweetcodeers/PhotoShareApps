@@ -1,0 +1,119 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 1068px) {
+  .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+  }
+}
+.card-gallery {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+.card-gallery .card-gallery-overlay {
+  background: rgba(0,0,0,0.2);
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+.card-gallery:hover .card-gallery-overlay {
+  opacity: 1;
+}
+.card-gallery-img {
+  width: 100%;
+}
+
+.card-gallery-text {
+  position: absolute;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 80%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.card-gallery:hover .card-gallery-text {
+  top: 90%;
+  left: 50%;
+  opacity: 1;
+}
+.modal-photos {
+  max-width: 550px;
+}
+.register{
+  margin-top: 100px;
+}
+.form-register {
+  width: 100%;
+  height: auto;
+  max-width: 530px;
+  padding: 15px;
+  margin: auto;
+}
+.login{
+  margin-top: 100px;
+}
+.form-login {
+  width: 100%;
+  max-width: 430px;
+  padding: 15px;
+  margin: auto;
+}
+.dropdown-divider .divider-navbar-dashboard {
+  background-color:gray;
+}
+.profil {
+  margin-top: 100px;
+  height: 500px;
+}
+.photo-profile {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 10px;
+
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+.photo {
+  margin-top: 100px;
+  height: 550px;
+}
+.icon-profil {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin: 0px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+.gallery {
+  height: 550px;
+  margin-bottom: 50px;
+}
+.photo-date{
+  font-size: 12px;
+  color: gray;
+}
