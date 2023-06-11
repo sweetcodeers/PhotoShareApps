@@ -26,11 +26,11 @@ class PhotoController extends Controller
                         'u.photo_profile as photo_profile',
                         'photos.id as id',
                         'photos.photo as photo',
-                        'photos.caption as caption'
+                        'photos.caption as caption',
+                        'photos.created_at as created_at'
                     )
                   ->get();
         foreach ($photos as $photo) {
-            $date         = Carbon::parse($photo->created_at)->formatLocalized('%d %b %Y %H:%M');
             $tags         = PhotoTag::where('photo_tags.photo_id', $photo->id)
                             ->join('tags as t', 't.id', '=', 'photo_tags.tag_id')
                             ->select('t.name as name')
@@ -45,8 +45,7 @@ class PhotoController extends Controller
         return view('photo.index', [
             'title'   => 'Photos',
             'photos'  => $photos,
-            'user'    => $user,
-            'date'    => $date
+            'user'    => $user
         ]);
     }
     public function create()
