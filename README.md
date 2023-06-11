@@ -7,45 +7,68 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+Dokumentasi ini memberikan ringkasan tentang proyek aplikasi sederhana untuk sharing foto. Di dalamnya terdapat informasi mengenai teknologi yang digunakan, list API routes dan instalasi environment variables.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Project Overview
+Project ini adalah aplikasi sederhana sharing foto yang memungkinkan pengguna untuk melakukan beberapa tindakan. Pengguna dapat melakukan login, melihat foto, mengunggah foto dengan caption dan tag, memperbarui detail foto, memberi suka atau tidak suka pada foto, serta menghapus foto.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Technologies Used
+- Laravel version 9 framework Backend
+- PHP vesion 8
+- Bootstrap version 5 framework Frontend
+- Database MySQL
+- Git for version control
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## List API Routes
+| Nama             | URL                  |  Method  | Deskripsi                                                    |
+| ---------------- | ---------------------|----------| -------------------------------------------------------------|
+| homepage         | /                    |   GET    | halaman pertama yang dilihat oleh pengunjung                 |
+| register         | /register            |   GET    | halaman untuk membuat akun baru                              |
+| register action  | /register/action     |   POST   | action dari halaman register                                 |
+| login            | /login               |   GET    | halaman login dengan mekanisme email & password              |
+| login action     | /login-action        |   POST   | action dari halaman login                                    |
+| photos           | /photos              |   GET    | halaman utama & semua foto akan tampil (user berhasil login) |
+| profil           | /profil              |   GET    | halaman profil user (berhasil login)                         |
+| profil update    | /profil              |   POST   | action dari edit profil user (berhasil login)                |
+| photos create    | /photos-create       |   GET    | halaman form create foto baru (berhasil login)               |
+| photos create    | /photos              |   POST   | action yang dihasilkan dari halaman create foto baru tersebut| 
+| action           |                      |          | (user berhasil login)                                        |
+| photos detail    | /photos/:{id}        |   GET    | halaman data detail foto seperti caption, tag, author        |
+| photos update    | /photos/:{id}        |   PUT    | action untuk memperbarui data foto (user berhasil login)     |
+| photos delete    | /photos/:{id}        |  DELETE  | action untuk menghapus sebuah foto (user berhasil login)     |
+| photos like      | /photos/:{id}/like   |   POST   | action untuk menyukai sebuah foto                            |
+| photos unlike    | /photos/:{id}/unlike |   POST   | Menghapus action menyukai sebuah foto                        |
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+##  Installation Environment Variables
+1). Cloning repository project atau download berupa file zip <br>
+2). Buka direktori project lalu buka command line.<br>
+3). Update composer <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**$ composer update** <br>
+4). Copy file .env.example <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**$ cp .env.example .env** <br>
+5). Buat database baru dengan nama **db_laravel** <br>
+6). Setup database yang telah dibuat pada file .env <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**DB_CONNECTION=mysql** <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**DB_H&nbsp;OST=127.0.0.1**<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**DB_PORT=3306**<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**DB_DATABASE=db_laravel**<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**DB_USERNAME=root**<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**DB_PASSWORD=**<br>
+7). Lakukan generate key <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**$ php artisan key:generate**<br>
+8). Jalankan migrate & seeder <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**$ php artisan migrate --seed** <br>
+9). Ubah tipe data kolom photo_profile pada tabel users dan photo pada tabel photos menjadi **LONGBLOB** <br>
+10). Jalankan serve<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**$ php artisan serve**<br>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+
+
 
 ## Contributing
 
