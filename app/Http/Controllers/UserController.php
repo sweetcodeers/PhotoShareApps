@@ -34,7 +34,6 @@ class UserController extends Controller
                    ->get();
   
         foreach ($photos as $photo) {
-            $date = Carbon::parse($photo->created_at)->formatLocalized('%d %b %Y %H:%M');
             $tags = PhotoTag::where('photo_tags.photo_id', $photo->id)
                     ->join('tags as t', 't.id', '=', 'photo_tags.tag_id')
                     ->select('t.name as name')
@@ -50,7 +49,6 @@ class UserController extends Controller
             'title'   => 'Welcome',
             'photos'  => $photos,
             'isLogin' => $isLogin,
-            'date'    => $date,
             'likes'   => $likes
         ]);
     }
