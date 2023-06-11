@@ -57,7 +57,7 @@
                                 @endif
                                 <p class="modal-title ms-2 fw-bold" id="photoLabel">
                                   {{$photo->username}} 
-                                  <span class="text-mute fw-lighter photo-date"> &#x25CF; {{$date}}</span>
+                                  <span class="text-mute fw-lighter photo-date"> &#x25CF; {!! \Carbon\Carbon::parse(old('date', $photo->created_at))->formatLocalized('%d %b %Y %H:%M') !!}</span>
                                 </p>
                                 <button type="button" class="btn-close bg-light rounded-circle" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
