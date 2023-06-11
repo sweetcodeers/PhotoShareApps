@@ -41,6 +41,7 @@ class UserController extends Controller
             $photo->tags = $tags;
 
             $likes = Like::where('photo_id', $photo->id)->count();
+            $photo->likes = $likes;
         }
         
 
@@ -48,8 +49,7 @@ class UserController extends Controller
         return view('index', [
             'title'   => 'Welcome',
             'photos'  => $photos,
-            'isLogin' => $isLogin,
-            'likes'   => $likes
+            'isLogin' => $isLogin
         ]);
     }
     public function register()
