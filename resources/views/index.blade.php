@@ -77,7 +77,7 @@
                                           @endforeach
                                       @endif
                                       <div class="d-grid gap-1 d-md-flex mt-3">
-                                        <a href="{{url('login')}}" class="btn btn-sm btn-light"><i class="bi bi-suit-heart-fill me-1"></i> {{$likes}} Likes</a>
+                                        <a href="{{url('login')}}" class="btn btn-sm btn-light"><i class="bi bi-suit-heart-fill me-1"></i> {{$photo->likes}} Likes</a>
                                         <a href="{{url('login')}}" class="btn btn-sm btn-light"><i class="bi bi-suit-heart me-1"></i> Unlikes</a>
                                       </div>
                                     </div>
