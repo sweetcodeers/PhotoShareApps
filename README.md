@@ -63,7 +63,9 @@ Project ini adalah aplikasi sederhana sharing foto yang memungkinkan pengguna un
 10). Jalankan serve<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**$ php artisan serve**<br>
 
-
+## User Login
+Email : user1@example.com
+Password :password123
 
 
 
