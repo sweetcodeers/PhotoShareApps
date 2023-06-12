@@ -21,56 +21,50 @@ Project ini adalah aplikasi sederhana sharing foto yang memungkinkan pengguna un
 
 ## List API Routes
 | Nama             | URL                  |  Method  | Deskripsi                                                    |
-| ---------------- | ---------------------|----------| -------------------------------------------------------------|
-| homepage         | /                    |   GET    | halaman pertama yang dilihat oleh pengunjung                 |
-| register         | /register            |   GET    | halaman untuk membuat akun baru                              |
-| register action  | /register/action     |   POST   | action dari halaman register                                 |
-| login            | /login               |   GET    | halaman login dengan mekanisme email & password              |
-| login action     | /login-action        |   POST   | action dari halaman login                                    |
-| photos           | /photos              |   GET    | halaman utama & semua foto akan tampil (user berhasil login) |
-| profil           | /profil              |   GET    | halaman profil user (berhasil login)                         |
-| profil update    | /profil              |   POST   | action dari edit profil user (berhasil login)                |
-| photos create    | /photos-create       |   GET    | halaman form create foto baru (berhasil login)               |
-| photos create    | /photos              |   POST   | action yang dihasilkan dari halaman create foto baru tersebut| 
-| action           |                      |          | (user berhasil login)                                        |
-| photos detail    | /photos/:{id}        |   GET    | halaman data detail foto seperti caption, tag, author        |
-| photos update    | /photos/:{id}        |   PUT    | action untuk memperbarui data foto (user berhasil login)     |
-| photos delete    | /photos/:{id}        |  DELETE  | action untuk menghapus sebuah foto (user berhasil login)     |
-| photos like      | /photos/:{id}/like   |   POST   | action untuk menyukai sebuah foto                            |
-| photos unlike    | /photos/:{id}/unlike |   POST   | Menghapus action menyukai sebuah foto                        |
+| -------------------- | ---------------------|----------| -------------------------------------------------------------|
+| homepage             | /                    |   GET    | halaman pertama yang dilihat oleh pengunjung                 |
+| register             | /register            |   GET    | halaman untuk membuat akun baru                              |
+| register action      | /register/action     |   POST   | action dari halaman register                                 |
+| login                | /login               |   GET    | halaman login dengan mekanisme email & password              |
+| login action         | /login-action        |   POST   | action dari halaman login                                    |
+| photos               | /photos              |   GET    | halaman utama & semua foto akan tampil (user berhasil login) |
+| profil               | /profil              |   GET    | halaman profil user (berhasil login)                         |
+| profil update        | /profil              |   POST   | action dari edit profil user (berhasil login)                |
+| photos create        | /photos-create       |   GET    | halaman form create foto baru (berhasil login)               |
+| photos create action | /photos              |   POST   | action yang dihasilkan dari halaman create foto baru tersebut  (user berhasil login) |
+| photos detail        | /photos/:{id}        |   GET    | halaman data detail foto seperti caption, tag, author        |
+| photos update        | /photos/:{id}        |   PUT    | action untuk memperbarui data foto (user berhasil login)     |
+| photos delete        | /photos/:{id}        |  DELETE  | action untuk menghapus sebuah foto (user berhasil login)     |
+| photos like          | /photos/:{id}/like   |   POST   | action untuk menyukai sebuah foto                            |
+| photos unlike        | /photos/:{id}/unlike |   POST   | Menghapus action menyukai sebuah foto                        |
 
 
 ##  Installation Environment Variables
-1). Cloning repository project atau download berupa file zip <br>
-2). Buka direktori project lalu buka command line.<br>
-3). Update composer <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**$ composer update** <br>
-4). Copy file .env.example <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**$ cp .env.example .env** <br>
-5). Buat database baru dengan nama **db_laravel** <br>
-6). Setup database yang telah dibuat pada file .env <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**DB_CONNECTION=mysql** <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**DB_H&nbsp;OST=127.0.0.1**<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**DB_PORT=3306**<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**DB_DATABASE=db_laravel**<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**DB_USERNAME=root**<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**DB_PASSWORD=**<br>
-7). Lakukan generate key <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**$ php artisan key:generate**<br>
-8). Jalankan migrate & seeder <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**$ php artisan migrate --seed** <br>
-9). Ubah tipe data kolom photo_profile pada tabel users dan photo pada tabel photos menjadi **LONGBLOB** <br>
-10). Jalankan serve<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**$ php artisan serve**<br>
+1. Cloning repository project atau download berupa file zip <br>
+2. Buka direktori project lalu buka command line.<br>
+3. Update composer <br>
+ **$ composer update** <br>
+4. Copy file .env.example menjadi .env <br>
+ **$ cp .env.example .env** <br>
+5. Buat database baru dengan nama **db_laravel** <br>
+6. Setup database yang telah dibuat pada file .env <br>
+&nbsp;**DB_CONNECTION=mysql** <br>
+&nbsp;**DB_H&nbsp;OST=127.0.0.1**<br>
+&nbsp;**DB_PORT=3306**<br>
+&nbsp;**DB_DATABASE=db_laravel**<br>
+&nbsp;**DB_USERNAME=root**<br>
+&nbsp;**DB_PASSWORD=**<br>
+7. Lakukan generate key <br>
+ **$ php artisan key:generate**<br>
+8. Jalankan migrate & seeder <br>
+ **$ php artisan migrate --seed** <br>
+9. Ubah tipe data kolom photo_profile pada tabel users dan photo pada tabel photos menjadi **LONGBLOB** <br>
+10. Jalankan serve<br>
+ **$ php artisan serve**<br>
 
 ## User Login
-Email : user1@example.com
-Password :password123
-
-
-
-
-
+Email : user1@example.com <br>
+Password : password123
 
 ## Contributing
 
